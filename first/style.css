@@ -1,0 +1,46 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-image: url(wallpaperflare.com_wallpaper.jpg);
+    background-repeat: repeat;
+    background-position: top right;
+    background-attachment: scroll;
+    background-size:cover;
+}
+
+#nav {
+    background-color: black;
+    position: absolute;
+    width: 100%;
+}
+
+#nav-ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-item {
+    background-color: rgb(48, 59, 59);
+    box-shadow: 0.2rem 0.2rem rgb(20, 24, 24);
+    margin-left: 5rem;
+    border-radius: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.nav-item:hover {
+    background-color: rgb(28, 32, 32);
+    color: aliceblue;
+}
+
+.nav-text {
+    color: white;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
