@@ -6,7 +6,7 @@
 <body>
     <h1>Department Information</h1>
     <p>hello</p>
-    <table border='1'>
+    <table border='1px' cellpadding="8">
         <tr>
             <th>Field</th>
             <th>Name</th>
