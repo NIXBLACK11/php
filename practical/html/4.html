@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Map Example</title>
+    <style>
+        /* Style for the image */
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            z-index: 1;
+        }
+
+        /* Style for the hotspots */
+        area {
+            outline: 2px solid red; /* Specify the color and thickness of the outline */
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="../Cat03.jpg" alt="Map" usemap="#map">
+
+    <map name="map">
+        <!-- Define your hotspots here -->
+        <area shape="rect" coords="0,0,100,100" alt="Area 1: Information for Area 1">
+        <area shape="rect" coords="100,0,200,100" alt="Area 2: Information for Area 2">
+        <!-- Add more areas as needed -->
+    </map>
+
+</body>
+</html>

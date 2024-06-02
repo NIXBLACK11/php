@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Layers Example</title>
+<style>
+    .text-layer .text1 {
+        font-size:50px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: red;
+        z-index: 1;
+    }
+
+    .text-layer .text2 {
+        font-size:50px;
+        position: absolute;
+        top: 20px; /* Adjust the distance between the layers */
+        left: 20px; /* Adjust the distance between the layers */
+        color: blue;
+        z-index: 2;
+    }
+</style>
+</head>
+<body>
+    <div class="text-layer">
+        <p class="text1">Text Layer 1</p>
+        <p class="text2">Text Layer 2</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Credit Card Validation</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Credit Card</legend>
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber">
+            <br><br>
+            <button type="button" onclick="validateCreditCard()">Validate</button>
+            <p id="validationResult"></p>
+        </fieldset>
+    </form>
+
+    <script>
+        function validateCreditCard() {
+            // Get the input value
+            var cardNumber = document.getElementById("cardNumber").value.trim();
+            // Validate the card number based on its type
+            if (checkMasterCard(cardNumber)) {
+                document.getElementById("validationResult").innerText = "Master Card Valid";
+            } else if (checkVisaCard(cardNumber)) {
+                document.getElementById("validationResult").innerText = "Visa Card Valid";
+            } else if (checkAmexCard(cardNumber)) {
+                document.getElementById("validationResult").innerText = "American Express Card Valid";
+            } else {
+                document.getElementById("validationResult").innerText = "Invalid Card Number";
+            }
+        }
+
+        // Check for Master Card
+        function checkMasterCard(cardNumber) {
+            var prefix = parseInt(cardNumber.substring(0, 2));
+            var length = cardNumber.length;
+            return (prefix >= 51 && prefix <= 55) && length === 16;
+        }
+
+        // Check for Visa Card
+        function checkVisaCard(cardNumber) {
+            var prefix = parseInt(cardNumber.charAt(0));
+            var length = cardNumber.length;
+            return prefix === 4 && (length === 13 || length === 16);
+        }
+
+        // Check for American Express Card
+        function checkAmexCard(cardNumber) {
+            var prefixes = ["34", "37"];
+            var prefix = cardNumber.substring(0, 2);
+            var length = cardNumber.length;
+            return prefixes.includes(prefix) && length === 15;
+        }
+    </script>
+</body>
+</html>

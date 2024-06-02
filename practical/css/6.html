@@ -1,0 +1,52 @@
+<!--
+
+background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [background-size];
+
+Each value within the background property is optional, and you can include them in any order. Here's a breakdown of each value:
+
+    background-color: Specifies the background color.
+    background-image: Specifies the background image URL.
+    background-repeat: Specifies how the background image should repeat.
+    background-attachment: Specifies whether the background image scrolls with the content or remains fixed.
+    background-position: Specifies the initial position of the background image.
+    background-size: Specifies the size of the background image.
+
+Here's an example of using the background shorthand property:
+
+css
+
+.element {
+    background: #f0f0f0 url('background.jpg') repeat-x fixed top right / cover;
+}
+
+This example sets the background color to #f0f0f0, the background image to background.jpg, repeats the image horizontally (repeat-x), fixes the background position (fixed), positions it at the top right corner, and sets the size to cover the entire element (cover).
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Fixed Background Image</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url('../images.jpeg'); /* Specify the URL of the background image */
+        background-size: cover; /* Cover the entire viewport */
+        background-attachment: fixed; /* Set the background image to be fixed */
+    }
+
+    .content {
+        padding: 20px;
+        color: rgb(11, 4, 90);
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <div class="content">
+        <h1>Welcome to My Website</h1>
+        <p>This is an example of a web page with a fixed background image.</p>
+    </div>
+</body>
+</html>

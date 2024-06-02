@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Day of the Week Finder</title>
+</head>
+<body>
+    <label for="birthdate">Enter your birth date:</label>
+    <input type="date" id="birthdate">
+    <button onclick="findDayOfWeek()">Find Day of the Week</button>
+
+    <script>
+        function findDayOfWeek() {
+            var birthdateInput = document.getElementById("birthdate");
+            var birthdate = new Date(birthdateInput.value);
+
+            // Check if the date is valid
+            if (isNaN(birthdate.getTime())) {
+                alert("Please enter a valid date.");
+                return;
+            }
+
+            var dayOfWeek = getDayOfWeek(birthdate.getDay());
+
+            alert("You were born on " + dayOfWeek + ".");
+        }
+
+        function getDayOfWeek(dayIndex) {
+            var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            return days[dayIndex];
+        }
+    </script>
+</body>
+</html>

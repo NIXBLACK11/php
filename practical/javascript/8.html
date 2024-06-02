@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            var message = "Hello to my website! ";
+            var index = 0;
+            var speed = 750;
+
+            function greet() {
+                document.title = message.substring(index) + message.substring(0, index);
+                index++;
+                if (index > message.length) {
+                    index = 0; // Reset index when it reaches the end of the message
+                }
+                setTimeout(greet, speed);
+            }
+
+            greet();
+        </script>
+    </body>
+</html>

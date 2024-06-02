@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Validation</title>
+    </head>
+    <body>
+        <form onsubmit="return validateForm()">
+            <fieldset>
+                <legend>Form</legend>
+                <label for="username">Username: </label>
+                <input type="text" id="username" name="username"><br><br>
+                <label for="password">Password: </label>
+                <input type="text" id="password" name="password"><br><br>
+                <label for="email">Email: </label>
+                <input type="text" id="email" name="email"><br><br>
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+
+        <script>
+            function validateForm() {
+                const username = document.getElementById("username");
+                const password = document.getElementById("password");
+                const email = document.getElementById("email");
+
+                if(!username || username.length()<6 || !containsAlpha(username)) {
+                    alert("Invalid username");
+                    return false;
+                }
+
+                if(!password || password.length()<6) {
+                    alert("Invalid password");
+                    return false;
+                }
+
+                if(!checkEmail(email)) {
+                    alert("Invalid email");
+                    return false;
+                }
+
+                alert("Valid");
+                return true;
+            }
+
+            function containsAlpha(s) {
+                const regex = /[a-zA-Z]+/;
+                return regex.test(s);
+            }
+
+            function checkEmail(s) {
+                
+            }
+        </script>
+    </body>
+</html>

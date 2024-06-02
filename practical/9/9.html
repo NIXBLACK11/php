@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Styled Web Page with Layering</title>
+<style>
+    /* Body styles */
+    body {
+        font-family: Arial, sans-serif; /* Different font styles */
+        background-image: url('background.jpg'); /* Set background image for the page */
+        background-repeat: no-repeat; /* Control repetition of image */
+        background-size: cover; /* Cover the entire background */
+        margin: 0;
+        padding: 0;
+        position: relative; /* Establish positioning context for layered elements */
+    }
+
+    /* Header styles */
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        position: relative; /* To allow layering within the header */
+        z-index: 2; /* Higher stacking order */
+    }
+
+    /* Link styles */
+    a:link, a:visited {
+        color: #ff6600;
+        text-decoration: none;
+        cursor: pointer; /* Customized cursor */
+    }
+
+    a:hover, a:active {
+        color: #cc3300;
+    }
+
+    /* Main content styles */
+    .main-content {
+        padding: 20px;
+        position: relative; /* To allow layering within the main content */
+        z-index: 1; /* Lower stacking order */
+    }
+
+    /* Footer styles */
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 2; /* Higher stacking order */
+    }
+
+    /* Image with background styles */
+    .background-image {
+        background-image: url('element-background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 20px;
+        margin-top: 20px;
+        text-align: center;
+        position: relative; /* To allow layering within the element */
+        z-index: 1; /* Lower stacking order */
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Styled Web Page with Layering</h1>
+        <nav>
+            <a href="#">Home</a> |
+            <a href="#">About</a> |
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <h2>Welcome to My Website</h2>
+        <p>This is a sample text. <a href="#">Click here</a> for more information.</p>
+        
+        <!-- Element with background image -->
+        <div class="background-image">
+            <h3>Background Image Element</h3>
+            <p>This element has a background image.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 CSS Styled Web Page with Layering</p>
+    </footer>
+</body>
+</html>

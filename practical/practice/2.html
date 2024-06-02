@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+    </head>
+    <body>
+        <form id="registrationForm" onsubmit="return validateForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+        <script>
+            function validateForm() {
+                var name = document.getElementById("name").value;
+                var pass = document.getElementById("password").value;
+                var email = document.getElementById("email").value;
+
+                if(!checkAlpha(name) || name.length<6) {
+                    alert("Invalid name!");
+                    return false;
+                }
+
+                if(!checkAlphaNum(pass) || pass.length<6) {
+                    alert("Invalid password!");
+                    return false;
+                }
+
+                if(!checkEmail(email)) {
+                    alert("Invalid email");
+                    return false;
+                }
+
+                return true;
+            }
+
+            function checkAlpha(s) {
+                const reg = /^[a-zA-Z]+$/;
+                return reg.test(s);
+            }
+
+            function checkAlphaNum(s) {
+                const reg = /^[a-zA-Z0-9]+$/;
+                return reg.test(s);
+            }
+
+            function checkEmail(s) {
+                var firstIndexOfAt = s.indexOf('@');
+                var lastIndexOfDot = s.lastIndexOf('.');
+
+                if(firstIndexOfAt>lastIndexOfDot || firstIndexOfAt==0 || lastIndexOfDot==s.length-1) return false;
+                return true;
+            }
+        </script>
+    </body>
+</html>

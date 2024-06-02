@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>1 minute</title>
+    </head>
+    <body>
+        <div id="change">First</div>
+        
+        <script>
+            function greet() {
+                var date = new Date();
+                document.getElementById("change").innerHTML+=`<p>hello at minute ${date.getMinutes()}<p>`;
+            }
+
+            greet();
+            setInterval(greet, 1000 * 15);
+        </script>
+    </body>
+</html>

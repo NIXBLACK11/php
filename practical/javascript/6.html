@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Telephone Number Splitter</title>
+</head>
+<body>
+    <label for="phoneNumber">Enter telephone number:</label>
+    <input type="text" id="phoneNumber" placeholder="(555) 555-5555">
+    <button onclick="splitPhoneNumber()">Split Number</button><br><br>
+
+    <label for="areaCode">Area Code:</label>
+    <input type="text" id="areaCode" readonly><br><br>
+
+    <label for="phoneNumberDigits">Phone Number (last four digits):</label>
+    <input type="text" id="phoneNumberDigits" readonly><br><br>
+
+    <script>
+        function splitPhoneNumber() {
+            var phoneNumberInput = document.getElementById("phoneNumber").value.trim();
+
+            // Check if the input matches the expected format
+            if (!phoneNumberInput.startsWith("(") || !phoneNumberInput.includes(") ") || !phoneNumberInput.includes("-")) {
+                alert("Please enter a valid telephone number in the format (555) 555-5555.");
+                return;
+            }
+
+            // Split the input string to extract area code and last four digits
+            var phoneNumberParts = phoneNumberInput.split(") ");
+            var areaCode = phoneNumberParts[0].slice(1);
+            var phoneNumberDigits = phoneNumberParts[1].split("-")[1];
+
+            // Display area code and last four digits in separate text fields
+            document.getElementById("areaCode").value = areaCode;
+            document.getElementById("phoneNumberDigits").value = phoneNumberDigits;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Table make</title>
+    </head>
+    <body>
+        <form onsubmit="update(); return false;">
+            <fieldset>
+                <legend>Survey</legend>
+                <label for="name">Enter name:</label>
+                <input type="text" name="name" id="name">
+                <br><br>
+                <label for="city">Select city</label>
+                <select id="city" name="city">
+                    <option value="Delhi">Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Kolkata">Kolkata</option>
+                </select>
+                <br><br>
+                <label for="car">Select city</label>
+                <select id="car" name="car">
+                    <option value="Maruti-K10">Maruti-K10</option>
+                    <option value="Zen-Astelo">Zen-Astelo</option>
+                    <option value="Wagnor">Wagnor</option>
+                    <option value="Maruti-SX4">Maruti-SX4</option>
+                </select>
+                <br><br>
+                <input type="submit" value="submit">
+            </fieldset>
+        </form>
+        <br><br>
+        <br><br>
+        <table border=1px cellpadding="8">
+            <tr>
+                <th></th>
+                <th>Maruti-K10</th>
+                <th>Zen-Astelo</th>
+                <th>Wagnor</th>
+                <th>Maruti-SX4</th>
+            </tr>
+            <tr>
+                <th>Delhi</th>
+                <th id="DelhiMaruti-K10">0</th>
+                <th id="DelhiZen-Astelo">0</th>
+                <th id="DelhiWagnor">0</th>
+                <th id="DelhiMaruti-SX-4">0</th>
+            </tr>
+            <tr>
+                <th>Mumbai</th>
+                <th id="MumbaiMaruti-K10">0</th>
+                <th id="MumbaiZen-Astelo">0</th>
+                <th id="MumbaiWagnor">0</th>
+                <th id="MumbaiMaruti-SX-4">0</th>
+            </tr>
+            <tr>
+                <th>Chennai</th>
+                <th id="ChennaiMaruti-K10">0</th>
+                <th id="ChennaiZen-Astelo">0</th>
+                <th id="ChennaiWagnor">0</th>
+                <th id="ChennaiMaruti-SX-4">0</th>
+            </tr>
+            <tr>
+                <th>Kolkata</th>
+                <th id="KolkataMaruti-K10">0</th>
+                <th id="KolkataZen-Astelo">0</th>
+                <th id="KolkataWagnor">0</th>
+                <th id="KolkataMaruti-SX-4">0</th>
+            </tr>
+        </table>
+        <script>
+            function update() {
+                var cityName = document.getElementById("city").value;
+                var carName = document.getElementById("car").value;
+
+                var value = parseInt(document.getElementById(cityName+carName).innerHTML);
+                document.getElementById(cityName+carName).innerHTML=value+1;
+            }
+        </script>
+    </body>
+</html>
